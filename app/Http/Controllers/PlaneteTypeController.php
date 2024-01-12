@@ -12,7 +12,27 @@ class PlaneteTypeController extends Controller
      */
     public function index()
     {
-        //
+        $planeteTypes = PlaneteType::with('planetes')->get();
+        $response = [];
+        foreach ($planeteTypes as $planeteType) 
+        {
+            $response[] = 
+            [
+                'id' => $planeteType->id,
+                'name' => $planeteType->name,
+                'planetes' => 
+                $planeteType->planetes->map(function ($planete) 
+                {
+                    return 
+                    [
+                        'id' => $planete->id,
+                        'name' => $planete->name,
+                        'webp' => $planete->webp,
+                    ];
+                })
+            ];
+        }
+        return response()->json($response);
     }
 
     /**
@@ -36,7 +56,8 @@ class PlaneteTypeController extends Controller
      */
     public function show(PlaneteType $planeteType)
     {
-        //
+        $planeteType->findOrfail($planeteType->id);
+        return response()->json($planeteType);
     }
 
     /**
