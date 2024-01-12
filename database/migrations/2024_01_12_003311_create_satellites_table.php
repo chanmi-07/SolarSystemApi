@@ -9,27 +9,26 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    // public function up(): void
-    // {
-    //     Schema::create('satellites', function (Blueprint $table) {
-    //         $table->id();
-    //         $table->string('name');
-    //         $table->foreignId('planete_id')->constrained('planetes');
-    //         $table->foreignId('satellite_type_id')->constrained('satellite_types');
-    //         $table->text('description');
-    //         $table->string('diameter');
-    //         $table->string('mass');
-    //         $table->text('webp');
-    //         $table->text('png');
-    //         $table->timestamps();
-    //     });
-    // }
+    public function up(): void
+    {
+        Schema::create('satellites', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->foreignId('planete_id')->constrained('planetes');
+            $table->text('description');
+            $table->string('diameter');
+            $table->string('mass');
+            $table->text('webp');
+            $table->text('png');
+            $table->timestamps();
+        });
+    }
 
     // /**
     //  * Reverse the migrations.
     //  */
-    // public function down(): void
-    // {
-    //     Schema::dropIfExists('satellites');
-    // }
+    public function down(): void
+    {
+        Schema::dropIfExists('satellites');
+    }
 };
