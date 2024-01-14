@@ -28,6 +28,7 @@ class PlaneteTypeController extends Controller
                         'id' => $planete->id,
                         'name' => $planete->name,
                         'webp' => $planete->webp,
+                        'link' => route('planetes.show', $planete->id),
                     ];
                 })
             ];
@@ -57,7 +58,24 @@ class PlaneteTypeController extends Controller
     public function show(PlaneteType $planeteType)
     {
         $planeteType->findOrfail($planeteType->id);
-        return response()->json($planeteType);
+        $response = 
+        [
+            'id' => $planeteType->id,
+            'name' => $planeteType->name,
+            'planetes' => 
+            $planeteType->planetes->map(function ($planete) 
+            {
+                return 
+                [
+                    'id' => $planete->id,
+                    'name' => $planete->name,
+                    'webp' => $planete->webp,
+                    'link' => route('planetes.show', $planete->id),
+                ];
+            })
+        ];
+
+        return response()->json($response);
     }
 
     /**

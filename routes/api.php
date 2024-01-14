@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlaneteController;
 use App\Http\Controllers\PlaneteTypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/planete-types', [PlaneteTypeController::class, 'index'])->name('planete-types.index');
 Route::get('/planete-types/{planeteType}', [PlaneteTypeController::class, 'show'])->name('planete-types.show');
+
+// planetes
+Route::get('/planetes', [PlaneteController::class, 'index'])->name('planetes.index');
+Route::get('/planetes/{planete}', [PlaneteController::class, 'showMultiple'])->name('planetes.show');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
