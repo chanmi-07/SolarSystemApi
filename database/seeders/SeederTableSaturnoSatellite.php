@@ -7,7 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class SeederTableMarteSatellite extends Seeder
+class SeederTableSaturnoSatellite extends Seeder
 {
     /**
      * Run the database seeds.
