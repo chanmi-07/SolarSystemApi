@@ -10,9 +10,60 @@ class SatelliteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $satellites = Satellite::with('planete');
+        if($request->page)
+        {
+            $paginate = $request->n_elements ?? 6;
+            $satellites = $satellites->paginate($paginate);
+            $paginateInfo =
+            [
+                'current' => $satellites->currentPage(),
+                'previous' => $satellites->previousPageUrl(),
+                'next' => $satellites->nextPageUrl(),
+                'pages' => $satellites->lastPage(),
+            ];
+        }
+        else
+        {
+            $satellites = $satellites->get();
+        }
+
+        $satelliteData = [];
+
+        foreach ($satellites as $satellite) 
+        {
+            $satelliteData[] = 
+            [
+                'id' => $satellite->id,
+                'name' => $satellite->name,
+                'planetes' => 
+                [
+                    'id' => $satellite->planete->id,
+                    'name' => $satellite->planete->name,
+                    'webp' => $satellite->planete->webp,
+                    'link' => route('planetes.show', $satellite->planete->id),
+                ],
+                'description' => $satellite->description,
+                'diameter' => $satellite->diameter,
+                'mass' => $satellite->mass,
+                'webp' => $satellite->webp,
+                'png' => $satellite->png,
+            ];
+        }
+
+        $response = 
+        [
+            'info' =>
+            [
+                'count' => $request->page ? $satellites->total() : $satellites->count(),
+                ...($paginateInfo ?? []),
+            ],
+            'satellites' => $satelliteData,
+        ];
+
+        return response()->json($response);
     }
 
     /**

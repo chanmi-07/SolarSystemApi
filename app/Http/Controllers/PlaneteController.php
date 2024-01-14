@@ -20,6 +20,7 @@ class PlaneteController extends Controller
             $planetes = $planetes->paginate($paginate);
             $paginateInfo =
             [
+                'current' => $planetes->currentPage(),
                 'previous' => $planetes->previousPageUrl(),
                 'next' => $planetes->nextPageUrl(),
                 'pages' => $planetes->lastPage(),
@@ -62,7 +63,7 @@ class PlaneteController extends Controller
         [
             'info' => 
             [
-                'count' => $planetes->count(),
+                'count' => $request->page ? $planetes->total() : $planetes->count(),
                 ...($paginateInfo ?? []),
             ],
             'planetes' => $planetesData,

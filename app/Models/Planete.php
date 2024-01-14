@@ -31,4 +31,9 @@ class Planete extends Model
     {
         return $this->belongsTo(PlaneteType::class);
     }
+
+    public function satellites()
+    {
+        return $this->hasMany(Satellite::class);
+    }
 }
