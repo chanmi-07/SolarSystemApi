@@ -17,8 +17,7 @@ class SeederTableMakeMakeSatellite extends Seeder
         DB::table('satellites')->insert
         ([
             [
-                'planete_id' => 11,
-                'type' => 'Satélite natural',
+                'planete_id' => 12,
                 'name' => 'S/2015 (136472)',
                 'description' => 'S/2015 (136472) 1, también designado MK2 es el satélite natural de Makemake. Al principio se creía que Makemake era un planeta enano, ubicado en el cinturón de Kuiper, que no tenía satélite.',
                 'diameter' => '175 km',

@@ -17,8 +17,7 @@ class SeederTableErisSatellite extends Seeder
         DB::table('satellites')->insert
         ([
             [
-                'planete_id' => 9,
-                'type' => 'Satélite natural',
+                'planete_id' => 13,
                 'name' => 'Disnomia',
                 'description' => 'El satélite parece cerca de sesenta veces menos luminoso que el propio planeta enano al que orbita, y hasta 500 veces más débil en el espectro visible.',
                 'diameter' => '815 km',

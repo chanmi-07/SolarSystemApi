@@ -14,7 +14,7 @@ class SeederTableJupiterSatellite extends Seeder
      */
     public function run(): void
     {
-        DB::table('satelites')->insert
+        DB::table('satellites')->insert
         ([
             [
                 'name' => 'Metis',
