@@ -126,9 +126,9 @@ class PlaneteController extends Controller
             ];
         }
 
-        $planetes = count($planetesData) == 1 ? $planetesData[0] : $planetesData;
+        $response = count($planetesData) == 1 ? $planetesData[0] : $planetesData;
         
-        return response()->json($planetes);
+        return response()->json($response);
     }
 
     /**

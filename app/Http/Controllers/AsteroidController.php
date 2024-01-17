@@ -12,7 +12,8 @@ class AsteroidController extends Controller
      */
     public function index()
     {
-        //
+        $asteroids = Asteroid::all('id', 'name', 'diameter', 'mass', 'webp', 'png');
+        return response()->json($asteroids);
     }
 
     /**
@@ -34,9 +35,12 @@ class AsteroidController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Asteroid $asteroid)
+    public function showMultiple($ids)
     {
-        //
+        $ids = explode(',', $ids);
+        $asteroids = Asteroid::findMany($ids, ['id', 'name', 'diameter', 'mass', 'webp', 'png']);
+        $response = count($asteroids) > 1 ? $asteroids : $asteroids[0];
+        return response()->json($response);
     }
 
     /**

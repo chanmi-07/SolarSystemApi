@@ -6,7 +6,13 @@ export default {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: 
+    {
+      spacing: 
+      {
+        'sidebar': '55px',
+      }
+    },
   },
   plugins: [],
 }

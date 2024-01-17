@@ -13,6 +13,7 @@ class SatelliteController extends Controller
     public function index(Request $request)
     {
         $satellites = Satellite::with('planete');
+        $request->planete && $satellites->where('planete_id', $request->planete);
         if($request->page)
         {
             $paginate = $request->n_elements ?? 6;
@@ -38,13 +39,7 @@ class SatelliteController extends Controller
             [
                 'id' => $satellite->id,
                 'name' => $satellite->name,
-                'planetes' => 
-                [
-                    'id' => $satellite->planete->id,
-                    'name' => $satellite->planete->name,
-                    'webp' => $satellite->planete->webp,
-                    'link' => route('planetes.show', $satellite->planete->id),
-                ],
+                'planete' => $satellite->planete->name,
                 'description' => $satellite->description,
                 'diameter' => $satellite->diameter,
                 'mass' => $satellite->mass,
@@ -85,9 +80,27 @@ class SatelliteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Satellite $satellite)
+    public function showMultiple($ids)
     {
-        //
+        $ids = explode(',', $ids);
+        $satellites = Satellite::whereIn('id', $ids)->get();
+        $satelliteData = [];
+        foreach ($satellites as $satellite) 
+        {
+            $satelliteData[] = 
+            [
+                'id' => $satellite->id,
+                'name' => $satellite->name,
+                'planete' => $satellite->planete->name,
+                'description' => $satellite->description,
+                'diameter' => $satellite->diameter,
+                'mass' => $satellite->mass,
+                'webp' => $satellite->webp,
+                'png' => $satellite->png,
+            ];
+        }
+        $response = count($satelliteData) > 1 ? $satelliteData : $satelliteData[0];
+        return response()->json($response);
     }
 
     /**

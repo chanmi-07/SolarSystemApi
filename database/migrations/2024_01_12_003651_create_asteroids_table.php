@@ -18,8 +18,6 @@ return new class extends Migration
             $table->text('description');
             $table->string('diameter');
             $table->string('mass');
-            $table->string('orbital_period');
-            $table->string('atmosphere');
             $table->text('webp');
             $table->text('png');
             $table->timestamps();

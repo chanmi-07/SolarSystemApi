@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AsteroidController;
 use App\Http\Controllers\PlaneteController;
 use App\Http\Controllers\PlaneteTypeController;
 use App\Http\Controllers\SatelliteController;
@@ -26,6 +27,11 @@ Route::get('/planetes/{planete}', [PlaneteController::class, 'showMultiple'])->n
 
 // satellites
 Route::get('/satellites', [SatelliteController::class, 'index'])->name('satellites.index');
+Route::get('/satellites/{satellite}', [SatelliteController::class, 'showMultiple'])->name('satellites.show');
+
+// asteroids
+Route::get('/asteroids', [AsteroidController::class, 'index'])->name('asteroids.index');
+Route::get('/asteroids/{asteroid}', [AsteroidController::class, 'showMultiple'])->name('asteroids.show');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
