@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Planete;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PlaneteController extends Controller
 {
@@ -55,8 +57,8 @@ class PlaneteController extends Controller
                 'gravity' => $planete->gravity,
                 'temperature' => $planete->temperature,
                 'atmosphere' => $planete->atmosphere,
-                'webp' => $planete->webp,
-                'png' => $planete->png,
+                'webp' => Storage::url($planete->webp),
+                'png' => Storage::url($planete->png),
             ];
         }
         $response = 
@@ -121,8 +123,8 @@ class PlaneteController extends Controller
                 'gravity' => $planete->gravity,
                 'temperature' => $planete->temperature,
                 'atmosphere' => $planete->atmosphere,
-                'webp' => $planete->webp,
-                'png' => $planete->png,
+                'webp' => Storage::url($planete->webp),
+                'png' => Storage::url($planete->png),
             ];
         }
 

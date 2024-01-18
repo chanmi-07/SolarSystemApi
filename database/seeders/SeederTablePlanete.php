@@ -29,8 +29,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '3.7 m/s²',
                 'temperature' => 'Entre -180 °C y los 430 °C',
                 'atmosphere' => 'Muy delgada, compuesta por trazas de gases como Oxígeno, Sodio, Hidrógeno, Helio y Potasio.',
-                'webp' => 'planetes/mercurio.webp',
-                'png' => 'planetes/mercurio.png',
+                'webp' => 'planetas/mercurio/mercurio.webp',
+                'png' => 'planetas/mercurio/mercurio.png',
             ],
             [
                 'name' => 'Venus',
@@ -46,8 +46,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '8.87 m/s²',
                 'temperature' => 'Entre 462 °C y los 471 °C',
                 'atmosphere' => 'Predominantemente dióxido de carbono, con densas nubes de ácido sulfúrico.',
-                'webp' => 'planetes/venus.webp',
-                'png' => 'planetes/venus.png',
+                'webp' => 'planetas/venus/venus.webp',
+                'png' => 'planetas/venus/venus.png',
             ],
             [
                 'name' => 'Tierra',
@@ -63,8 +63,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '9.807 m/s²',
                 'temperature' => 'Entre -89.2 °C y los 56.7 °C',
                 'atmosphere' => 'Nitrógeno, Oxígeno, Argón y Dióxido de Carbono.',
-                'webp' => 'planetes/tierra.webp',
-                'png' => 'planetes/tierra.png',
+                'webp' => 'planetas/tierra/tierra.webp',
+                'png' => 'planetas/tierra/tierra.png',
             ],
             [
                 'name' => 'Marte',
@@ -80,8 +80,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '3.711 m/s²',
                 'temperature' => 'Entre -87 °C y los 5 °C',
                 'atmosphere' => 'Dióxido de Carbono, Nitrógeno, Argón y Oxígeno.',
-                'webp' => 'planetes/marte.webp',
-                'png' => 'planetes/marte.png',
+                'webp' => 'planetas/marte/marte.webp',
+                'png' => 'planetas/marte/marte.png',
             ],
             [
                 'name' => 'Júpiter',
@@ -97,8 +97,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '24.79 m/s²',
                 'temperature' => 'Entre -108 °C y los -13 °C',
                 'atmosphere' => 'Hidrógeno, Helio y Metano.',
-                'webp' => 'planetes/jupiter.webp',
-                'png' => 'planetes/jupiter.png',
+                'webp' => 'planetas/jupiter/jupiter.webp',
+                'png' => 'planetas/jupiter/jupiter.png',
             ],
             [
                 'name' => 'Saturno',
@@ -111,11 +111,11 @@ class SeederTablePlanete extends Seeder
                 'diameter' => '120536 km',
                 'mass' => '5.683x10^26 kg',
                 'density' => '0.687 g/cm³',
-                'gravity' => '10.44 m/s²', //this is the mising data
+                'gravity' => '10.44 m/s²',
                 'temperature' => 'Entre -139 °C y los -178 °C',
                 'atmosphere' => 'Hidrógeno y Helio.',
-                'webp' => 'planetes/saturno.webp',
-                'png' => 'planetes/saturno.png',
+                'webp' => 'planetas/saturno/saturno.webp',
+                'png' => 'planetas/saturno/saturno.png',
             ],
             [
                 'name' => 'Urano',
@@ -131,8 +131,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '8.87 m/s²',
                 'temperature' => 'Entre -224 °C y los -197 °C',
                 'atmosphere' => 'Hidrógeno, Helio y Metano.',
-                'webp' => 'planetes/urano.webp',
-                'png' => 'planetes/urano.png',
+                'webp' => 'planetas/urano/urano.webp',
+                'png' => 'planetas/urano/urano.png',
             ],
             [
                 'name' => 'Neptuno',
@@ -148,8 +148,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '11.15 m/s²',
                 'temperature' => 'Entre -218 °C y los -200 °C',
                 'atmosphere' => 'Hidrógeno, Helio y Metano.',
-                'webp' => 'planetes/neptuno.webp',
-                'png' => 'planetes/neptuno.png',
+                'webp' => 'planetas/neptuno/neptuno.webp',
+                'png' => 'planetas/neptuno/neptuno.png',
             ],
             [
                 'name' => 'Plutón',
@@ -165,8 +165,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '0.62 m/s²',
                 'temperature' => 'Entre -233 °C y los -223 °C',
                 'atmosphere' => 'Nitrógeno, Metano y Monóxido de Carbono.',
-                'webp' => 'planetes/pluton.webp',
-                'png' => 'planetes/pluton.png',
+                'webp' => 'planetas/pluton/pluton.webp',
+                'png' => 'planetas/pluton/pluton.png',
             ],
             [
                 'name' => 'Ceres',
@@ -182,8 +182,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '0.27 m/s²',
                 'temperature' => '-105 °C',
                 'atmosphere' => 'Puede tener trazas de una atmósfera débil compuesta por vapor de agua.',
-                'webp' => 'planetes/ceres.webp',
-                'png' => 'planetes/ceres.png',
+                'webp' => 'planetas/ceres/ceres.webp',
+                'png' => 'planetas/ceres/ceres.png',
             ],
             [
                 'name' => 'Haumea',
@@ -199,8 +199,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '0.401 m/s²',
                 'temperature' => '-223 °C',
                 'atmosphere' => 'No tiene atmósfera.',
-                'webp' => 'planetes/haumea.webp',
-                'png' => 'planetes/haumea.png',
+                'webp' => 'planetas/haumea/haumea.webp',
+                'png' => 'planetas/haumea/haumea.png',
             ],
             [
                 'name' => 'Makemake',
@@ -216,8 +216,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '0.5 m/s²',
                 'temperature' => '-240 °C',
                 'atmosphere' => 'No tiene atmósfera.',
-                'webp' => 'planetes/makemake.webp',
-                'png' => 'planetes/makemake.png',
+                'webp' => 'planetas/makemake/makemake.webp',
+                'png' => 'planetas/makemake/makemake.png',
             ],
             [
                 'name' => 'Eris',
@@ -233,8 +233,8 @@ class SeederTablePlanete extends Seeder
                 'gravity' => '0.82 m/s²',
                 'temperature' => 'Entre -217 °C y -243 °C',
                 'atmosphere' => 'Nitrógeno con rastros de Metano.',
-                'webp' => 'planetes/eris.webp',
-                'png' => 'planetes/eris.png',
+                'webp' => 'planetas/eris/eris.webp',
+                'png' => 'planetas/eris/eris.png',
             ]
         ]);
     }
