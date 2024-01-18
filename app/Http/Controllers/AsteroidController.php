@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Asteroid;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AsteroidController extends Controller
 {
@@ -13,6 +14,11 @@ class AsteroidController extends Controller
     public function index()
     {
         $asteroids = Asteroid::all('id', 'name', 'diameter', 'mass', 'webp', 'png');
+        foreach ($asteroids as $asteroid) 
+        {
+            $asteroid->webp = Storage::url($asteroid->webp);
+            $asteroid->png = Storage::url($asteroid->png);
+        }
         return response()->json($asteroids);
     }
 
@@ -39,6 +45,12 @@ class AsteroidController extends Controller
     {
         $ids = explode(',', $ids);
         $asteroids = Asteroid::findMany($ids, ['id', 'name', 'diameter', 'mass', 'webp', 'png']);
+        foreach ($asteroids as $asteroid) 
+        {
+            $asteroid->webp = Storage::url($asteroid->webp);
+            $asteroid->png = Storage::url($asteroid->png);
+        }
+
         $response = count($asteroids) > 1 ? $asteroids : $asteroids[0];
         return response()->json($response);
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Satellite;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SatelliteController extends Controller
 {
@@ -43,8 +44,8 @@ class SatelliteController extends Controller
                 'description' => $satellite->description,
                 'diameter' => $satellite->diameter,
                 'mass' => $satellite->mass,
-                'webp' => $satellite->webp,
-                'png' => $satellite->png,
+                'webp' => Storage::url('planetas/'.$satellite->webp),
+                'png' => Storage::url('planetas/'.$satellite->png),
             ];
         }
 
@@ -95,8 +96,8 @@ class SatelliteController extends Controller
                 'description' => $satellite->description,
                 'diameter' => $satellite->diameter,
                 'mass' => $satellite->mass,
-                'webp' => $satellite->webp,
-                'png' => $satellite->png,
+                'webp' => Storage::url('planetas/'.$satellite->webp),
+                'png' => Storage::url('planetas/'.$satellite->png),
             ];
         }
         $response = count($satelliteData) > 1 ? $satelliteData : $satelliteData[0];
