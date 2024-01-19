@@ -17,7 +17,7 @@ class SeederTablePlutonSatellite extends Seeder
         DB::table('satellites')->insert
         ([
             [
-                'planete_id' => 9,
+                'planet_id' => 9,
                 'name' => 'Caronte',
                 'description' => 'La superficie de Caronte parece estar dominada por el hielo de agua. Asimismo parece no tener atmósfera. En 2007, las observaciones llevadas a cabo por el Observatorio Gemini de hidratos de amoníaco y cristales de agua en la superficie de Caronte sugirieron la presencia de criogéiseres activos.',
                 'diameter' => '1208 km',
@@ -26,7 +26,7 @@ class SeederTablePlutonSatellite extends Seeder
                 'png' => 'pluto/satelites/caronte.png'
             ],
             [
-                'planete_id' => 9,
+                'planet_id' => 9,
                 'name' => 'Nix',
                 'description' => 'Nix es un satélite del sistema binario constituido por Plutón y Caronte. Fue descubierto a finales de 2005 junto con Hidra y el telescopio espacial Hubble confirmó su presencia en febrero de 2006.',
                 'diameter' => '42x36 km',
@@ -35,7 +35,7 @@ class SeederTablePlutonSatellite extends Seeder
                 'png' => 'pluto/satelites/nix.png'
             ],
             [
-                'planete_id' => 9,
+                'planet_id' => 9,
                 'name' => 'Estigia',
                 'description' => 'Estigia (fue denominado provisionalmente S/2012 P 1 y también como S/2012 (134340) 1 o P5) es un pequeño satélite natural del planeta enano Plutón, cuyo descubrimiento fue anunciado el 11 de julio de 2012 por Mark R. Showalter.',
                 'diameter' => '10 - 25 km',
@@ -44,7 +44,7 @@ class SeederTablePlutonSatellite extends Seeder
                 'png' => 'pluto/satelites/estigia.png'
             ],
             [
-                'planete_id' => 9,
+                'planet_id' => 9,
                 'name' => 'Cerbero',
                 'description' => 'El satélite orbita en la región entre Nix e Hydra y efectúa una órbita completa de Plutón cada casi 31 días terrestres.',
                 'diameter' => '13-34 km',
@@ -53,7 +53,7 @@ class SeederTablePlutonSatellite extends Seeder
                 'png' => 'pluto/satelites/cerbero.png'
             ],
             [
-                'planete_id' => 9,
+                'planet_id' => 9,
                 'name' => 'Hidra',
                 'description' => 'Se encuentra en el plano orbital de Caronte y su forma es altamente irregular y tiene un tamaño de 55x40 km.',
                 'diameter' => '5x10^16 - 2x10^18 kg',

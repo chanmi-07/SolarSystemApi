@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('planetes', function (Blueprint $table) {
+        Schema::create('planets', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('planete_type_id')->constrained('planete_types');
+            $table->foreignId('planet_type_id')->constrained('planet_types');
             $table->text('description');
             $table->string('orbital_distance');
             $table->string('orbital_period');
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('planetes');
+        Schema::dropIfExists('planets');
     }
 };

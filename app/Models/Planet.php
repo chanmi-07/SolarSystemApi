@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Planete extends Model
+class Planet extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'planete_type_id',
+        'planet_type_id',
         'description',
         'orbital_distance',
         'orbital_period',
@@ -27,9 +27,9 @@ class Planete extends Model
         'png'
     ];
 
-    public function planeteType()
+    public function planetType()
     {
-        return $this->belongsTo(PlaneteType::class);
+        return $this->belongsTo(PlanetType::class);
     }
 
     public function satellites()

@@ -6,18 +6,18 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class SeederTablePlanete extends Seeder
+class SeederTablePlanet extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('planetes')->insert
+        DB::table('planets')->insert
         ([
             [
                 'name' => 'Mercurio',
-                'planete_type_id' => 1,
+                'planet_type_id' => 1,
                 'description' => 'Mercurio es el planeta del sistema solar más cercano al Sol y el más pequeño. Forma parte de los denominados planetas interiores y carece de satélites naturales al igual que Venus. Se conocía muy poco sobre su superficie hasta que fue enviada la sonda planetaria Mariner 10 y se hicieron observaciones con radar y radiotelescopios.',
                 'orbital_distance' => '57.91 millones de km',
                 'orbital_period' => '88 días',
@@ -34,7 +34,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Venus',
-                'planete_type_id' => 1,
+                'planet_type_id' => 1,
                 'description' => 'Venus es el segundo planeta del sistema solar. Pese a situarse más lejos del Sol que Mercurio, Venus posee la atmósfera más caliente del sistema solar; esto se debe a que está principalmente compuesta por gases de efecto invernadero, como el dióxido de carbono, atrapando mucho más calor del Sol. Actualmente carece de agua líquida y sus condiciones en superficie se consideran incompatibles con la vida conocida.',
                 'orbital_distance' => '108.2 millones de km',
                 'orbital_period' => '225 días',
@@ -51,7 +51,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Tierra',
-                'planete_type_id' => 1,
+                'planet_type_id' => 1,
                 'description' => 'La Tierra se formó hace aproximadamente 4550 millones de años y la vida surgió unos mil millones de años después. Es actualmente el único cuerpo astronómico donde se conoce la existencia de vida. La atmósfera y otras condiciones abióticas han sido alteradas significativamente por la biosfera del planeta, favoreciendo la proliferación de organismos aerobios, así como la formación de una capa de ozono que junto con el campo magnético terrestre bloquean la radiación solar dañina, permitiendo así la vida en la Tierra',
                 'orbital_distance' => '149.6 millones de km',
                 'orbital_period' => '365.25 días',
@@ -68,7 +68,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Marte',
-                'planete_type_id' => 1,
+                'planet_type_id' => 1,
                 'description' => 'Marte es el cuarto planeta en orden de distancia al Sol, también es conocido como el planeta rojo debido a la apariencia rojiza que le confiere el óxido de hierro predominante en su superficie. Marte es el planeta interior más alejado del Sol. Es un planeta telúrico con una atmósfera delgada de dióxido de carbono, y tiene dos satélites pequeños y de forma irregular, Fobos y Deimos',
                 'orbital_distance' => '227.9 millones de km',
                 'orbital_period' => '687 días',
@@ -85,7 +85,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Júpiter',
-                'planete_type_id' => 1,
+                'planet_type_id' => 1,
                 'description' => 'Júpiter es un cuerpo masivo gaseoso, formado principalmente por hidrógeno y helio, carente de una superficie interior definida. Entre los detalles atmosféricos es notable la Gran Mancha Roja (un enorme anticiclón situado en las latitudes tropicales del hemisferio sur), la estructura de nubes en bandas oscuras y zonas brillantes, y la dinámica atmosférica global determinada por intensos vientos zonales alternantes en latitud y con velocidades de hasta 140 m/s (504 km/h).',
                 'orbital_distance' => '778.6 millones de km',
                 'orbital_period' => '11.86 años',
@@ -102,7 +102,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Saturno',
-                'planete_type_id' => 1,
+                'planet_type_id' => 1,
                 'description' => 'Saturno es el sexto planeta del sistema solar contando desde el Sol, el segundo en tamaño y masa después de Júpiter y el único con un sistema de anillos visible desde la Tierra. Su nombre proviene del dios romano Saturno. Forma parte de los denominados planetas exteriores o gaseosos. El aspecto más característico de Saturno son sus brillantes y grandes anillos. Antes de la invención del telescopio, Saturno era el más lejano de los planetas conocidos y, a simple vista, no parecía luminoso ni interesante.',
                 'orbital_distance' => '1426.6 millones de km',
                 'orbital_period' => '29.46 años',
@@ -119,7 +119,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Urano',
-                'planete_type_id' => 1,
+                'planet_type_id' => 1,
                 'description' => 'Urano es similar en composición a Neptuno. La atmósfera de Urano, aunque es similar a la de Júpiter y Saturno por estar compuesta principalmente de hidrógeno y helio, contiene una proporción superior tanto de hielo como de agua, amoníaco y metano, junto con trazas de hidrocarburos. Posee la atmósfera planetaria más fría del sistema solar, con una temperatura mínima de 49 K (-224 °C). Asimismo, tiene una estructura de nubes muy compleja, acomodada por niveles, donde se cree que las nubes más bajas están compuestas de agua y las más altas de metano. En contraste, el interior de Urano se encuentra compuesto principalmente de hielo y roca.',
                 'orbital_distance' => '2870.9 millones de km',
                 'orbital_period' => '84.01 años',
@@ -136,7 +136,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Neptuno',
-                'planete_type_id' => 1,
+                'planet_type_id' => 1,
                 'description' => 'Neptuno es el octavo planeta en distancia respecto al Sol y el más lejano del sistema solar. Forma parte de los denominados planetas exteriores, y dentro de estos, es uno de los gigantes helados, y es el primero que fue descubierto gracias a predicciones matemáticas.',
                 'orbital_distance' => '4498.3 millones de km',
                 'orbital_period' => '164.79 años',
@@ -153,7 +153,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Plutón',
-                'planete_type_id' => 2,
+                'planet_type_id' => 2,
                 'description' => 'Plutón posee una órbita excéntrica y altamente inclinada con respecto a la eclíptica, que recorre acercándose en su perihelio hasta el interior de la órbita de Neptuno. Su gran distancia al Sol y a la Tierra, unida a su reducido tamaño, impide que brille por encima de la magnitud 13,8 en sus mejores momentos, por lo cual solo puede ser apreciado con telescopios a partir de los 200 mm de abertura, fotográficamente o con cámara CCD.',
                 'orbital_distance' => '5906.4 millones de km',
                 'orbital_period' => '247.94 años',
@@ -170,7 +170,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Ceres',
-                'planete_type_id' => 2,
+                'planet_type_id' => 2,
                 'description' => 'Ceres, el cuerpo menor del sistema solar n.º 1, es un planeta enano y el objeto astronómico más grande del cinturón de asteroides, región del sistema solar que se encuentra entre las órbitas de Marte y Júpiter.',
                 'orbital_distance' => '413.7 millones de km',
                 'orbital_period' => '4.6 años',
@@ -187,7 +187,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Haumea',
-                'planete_type_id' => 2,
+                'planet_type_id' => 2,
                 'description' => 'Haumea es tan brillante como la nieve, con un albedo en el rango de 0,6-0,8,43 lo que está de acuerdo con la modelización de mejor ajuste de los espectros de superficie, que sugirió que entre el 66 y el 80 % de la superficie de Haumea parece ser hielo cristalino puro, con un contribuyente al alto albedo que podría ser cianuro de hidrógeno o arcillas de filosilicatos.',
                 'orbital_distance' => '6478.1 millones de km',
                 'orbital_period' => '283.28 años',
@@ -204,7 +204,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Makemake',
-                'planete_type_id' => 2,
+                'planet_type_id' => 2,
                 'description' => 'Makemake es un planeta enano ubicado en el cinturón de Kuiper, siendo el tercero en tamaño en el Sistema Solar y uno de los objetos más grande del exterior de nuestro vecindario solar.',
                 'orbital_distance' => '6850.3 millones de km',
                 'orbital_period' => '309.88 años',
@@ -221,7 +221,7 @@ class SeederTablePlanete extends Seeder
             ],
             [
                 'name' => 'Eris',
-                'planete_type_id' => 2,
+                'planet_type_id' => 2,
                 'description' => 'Es un objeto transneptuniano (TNO), miembro de una población de objetos de alta excentricidad conocida como disco disperso, y posee un satélite llamado Disnomia. Está ubicado en el cinturón de Kuiper.',
                 'orbital_distance' => '10100 millones de km',
                 'orbital_period' => '557 años',

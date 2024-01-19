@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PlaneteType extends Model
+class PlanetType extends Model
 {
     use HasFactory;
 
@@ -15,8 +15,8 @@ class PlaneteType extends Model
         'characteristics'
     ];
 
-    public function planetes()
+    public function planets()
     {
-        return $this->hasMany(Planete::class);
+        return $this->hasMany(Planet::class);
     }
 }

@@ -17,7 +17,7 @@ class SeederTableHaumeaSatellite extends Seeder
         DB::table('satellites')->insert
         ([
             [
-                'planete_id' => 11,
+                'planet_id' => 11,
                 'name' => 'Namaka',
                 'description' => 'Namaka, también conocido como Haumea II, es el menor y más interior de los dos satélites conocidos del planeta enano Haumea.',
                 'diameter' => '170 km',
@@ -26,7 +26,7 @@ class SeederTableHaumeaSatellite extends Seeder
                 'png' => 'haumea/satelites/namaka.png'
             ],
             [
-                'planete_id' => 11,
+                'planet_id' => 11,
                 'name' => "Hi'iaka",
                 'description' => "Hi'iaka, también conocido como Haumea I, es el mayor y más exterior de los dos satélites conocidos del planeta enano Haumea.",
                 'diameter' => '310 km',

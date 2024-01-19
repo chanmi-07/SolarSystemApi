@@ -13,8 +13,8 @@ class SatelliteController extends Controller
      */
     public function index(Request $request)
     {
-        $satellites = Satellite::with('planete');
-        $request->planete && $satellites->where('planete_id', $request->planete);
+        $satellites = Satellite::with('planet');
+        $request->planet && $satellites->where('planet_id', $request->planet);
         if($request->page)
         {
             $paginate = $request->n_elements ?? 6;
@@ -40,7 +40,7 @@ class SatelliteController extends Controller
             [
                 'id' => $satellite->id,
                 'name' => $satellite->name,
-                'planete' => $satellite->planete->name,
+                'planet' => $satellite->planet->name,
                 'description' => $satellite->description,
                 'diameter' => $satellite->diameter,
                 'mass' => $satellite->mass,
@@ -92,7 +92,7 @@ class SatelliteController extends Controller
             [
                 'id' => $satellite->id,
                 'name' => $satellite->name,
-                'planete' => $satellite->planete->name,
+                'planet' => $satellite->planet->name,
                 'description' => $satellite->description,
                 'diameter' => $satellite->diameter,
                 'mass' => $satellite->mass,

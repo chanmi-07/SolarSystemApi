@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AsteroidController;
-use App\Http\Controllers\PlaneteController;
-use App\Http\Controllers\PlaneteTypeController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PlanetController;
+use App\Http\Controllers\PlanetTypeController;
 use App\Http\Controllers\SatelliteController;
+use App\Http\Controllers\SunController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,13 +19,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-// planete-types
-Route::get('/planete-types', [PlaneteTypeController::class, 'index'])->name('planete-types.index');
-Route::get('/planete-types/{planeteType}', [PlaneteTypeController::class, 'show'])->name('planete-types.show');
+// home
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
-// planetes
-Route::get('/planetes', [PlaneteController::class, 'index'])->name('planetes.index');
-Route::get('/planetes/{planete}', [PlaneteController::class, 'showMultiple'])->name('planetes.show');
+// sun
+Route::get('/sun', [SunController::class, 'index'])->name('sun.index');
+
+// planet-types
+Route::get('/planet-types', [PlanetTypeController::class, 'index'])->name('planet-types.index');
+Route::get('/planet-types/{planetType}', [PlanetTypeController::class, 'show'])->name('planet-types.show');
+
+// planets
+Route::get('/planets', [PlanetController::class, 'index'])->name('planets.index');
+Route::get('/planets/{planet}', [PlanetController::class, 'showMultiple'])->name('planets.show');
 
 // satellites
 Route::get('/satellites', [SatelliteController::class, 'index'])->name('satellites.index');

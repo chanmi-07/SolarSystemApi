@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('satellites', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('planete_id')->constrained('planetes');
+            $table->foreignId('planet_id')->constrained('planets');
             $table->text('description');
             $table->string('diameter');
             $table->string('mass');

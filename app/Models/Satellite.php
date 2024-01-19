@@ -17,11 +17,11 @@ class Satellite extends Model
         'mass',
         'webp',
         'png',
-        'planete_id',
+        'planet_id',
     ];
 
-    public function planete()
+    public function planet()
     {
-        return $this->belongsTo(Planete::class);
+        return $this->belongsTo(Planet::class);
     }
 }
