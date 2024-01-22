@@ -96,8 +96,8 @@ class SatelliteController extends Controller
                 'description' => $satellite->description,
                 'diameter' => $satellite->diameter,
                 'mass' => $satellite->mass,
-                'webp' => Storage::url('planetas/'.$satellite->webp),
-                'png' => Storage::url('planetas/'.$satellite->png),
+                'webp' => $satellite->webp ? Storage::url('planetas/'.$satellite->webp) : null,
+                'png' => $satellite->png ? Storage::url('planetas/'.$satellite->png) : null,
             ];
         }
         $response = count($satelliteData) > 1 ? $satelliteData : $satelliteData[0];
