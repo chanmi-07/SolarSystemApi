@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PlanetController;
 use App\Http\Controllers\PlanetTypeController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\OptionController;
 use App\Http\Controllers\SatelliteController;
 use App\Http\Controllers\SunController;
 use Illuminate\Http\Request;
@@ -44,6 +45,7 @@ Route::get('/asteroids/{asteroid}', [AsteroidController::class, 'showMultiple'])
 
 // questions'
 Route::get('/questions', [QuestionController::class, 'index'])->name('questions.index');
+Route::get('/get-answer/{ids}', [OptionController::class, 'getAnswer'])->name('options.getAnswer');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

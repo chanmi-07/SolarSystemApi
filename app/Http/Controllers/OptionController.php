@@ -4,62 +4,39 @@ namespace App\Http\Controllers;
 
 use App\Models\Option;
 use Illuminate\Http\Request;
+use QuizHelper;
 
 class OptionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function getAnswer($ids)
     {
-        //
-    }
+        $ids = explode(',', $ids);
+        
+        $options = Option::whereIn('id', $ids)
+        ->with('question:id,question')
+        ->get(['id', 'option', 'question_id', 'is_correct']);
+        
+        $nOptions = $options->count();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $data = [];
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Option $option)
-    {
-        //
-    }
+        foreach ($options as $option) 
+        {
+            $option->message = $option->is_correct ? 'Correcto' : 'Incorrecto';
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Option $option)
-    {
-        //
-    }
+            $data[] = $option;
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Option $option)
-    {
-        //
-    }
+        $correctOptions = $options->where('is_correct', true)->count();
+        $percent = QuizHelper::getPercentage($nOptions, $correctOptions);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Option $option)
-    {
-        //
+        $response = [
+            'data' => $data,
+            'total' => $nOptions,
+            'percent' => $percent,
+        ];
+
+        return response()->json($response);
     }
 }
