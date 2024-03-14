@@ -9,7 +9,7 @@ use QuizHelper;
 class OptionController extends Controller
 {
 
-    public function getAnswer($ids)
+    public function getAnswer($ids, Request $request)
     {
         $ids = explode(',', $ids);
         
@@ -30,11 +30,14 @@ class OptionController extends Controller
 
         $correctOptions = $options->where('is_correct', true)->count();
         $percent = QuizHelper::getPercentage($nOptions, $correctOptions);
+        $score = $correctOptions.'/'.$nOptions;
+        $withData = $request->withData ? ['data' => $data] : [];
 
         $response = [
-            'data' => $data,
-            'total' => $nOptions,
+            'totalQuestions' => $nOptions,
             'percent' => $percent,
+            'score' => $score,
+            ...$withData
         ];
 
         return response()->json($response);
